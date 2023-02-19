@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <div className='w-full h-[600px] flex items-center'>
-          <div className='md:max-w-[1024px] h-full mx-auto max-w-[600px] flex justify-center relative items-center px-24 md:px-0'>
+          <div className='md:max-w-[1024px] h-full mx-auto max-w-[600px] flex justify-center relative items-center px-16 md:px-0'>
               
               <div className='w-full items-center object-cover py-50'>
                 <Image 
