@@ -1,3 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+
+.slick-next:before {
+  content:url('../assets/nextButton.png'); 
+  margin-left: -45px;
+ }
+
+.slick-next {
+  margin-top: -20px;
+ }
+
+/* 
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +123,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
