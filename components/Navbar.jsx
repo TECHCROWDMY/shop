@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className='w-full h-[80px] bg-white border-b'>
-        <div className='md:max-w-[1024px] max-w-[600px] m-auto w-full h-full flex justify-between items-center'>
+        <div className='md:max-w-[1024px] max-w-[600px] m-auto w-full h-full flex justify-between items-center px-4 md:px-0'>
             
             {/* <img src={logo} className="h-[18px] opacity-[65%]" /> */}
             <h1>Shop</h1>
