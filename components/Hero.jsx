@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
  
 const Hero = () => {
   return (
-    <div className='w-full h-[600px] flex items-center'>
+    <div className='w-full md:h-[600px] h-[300px] flex items-center'>
           <div className='md:max-w-[1024px] h-full mx-auto max-w-[600px] flex justify-center relative items-center px-12 md:px-0'>
               
               <div className='w-full items-center object-cover py-50'>
@@ -17,7 +17,7 @@ const Hero = () => {
                 />
               </div>
 
-              <div className='absolute top-0 w-full h-full flex  justify-center mt-[200px]'>
+              <div className='absolute top-0 w-full h-full flex  justify-center md:mt-[200px] mt-[50px] '>
                   <motion.div initial="hidden" animate="visible" variants={{
                       hidden: {
                         x: 0,
