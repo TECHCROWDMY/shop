@@ -7,6 +7,12 @@ const ProductPage  = () => {
   let products=[
     {
       imgUrl:'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
+      smallImg:[
+        'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
+        'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
+        'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
+        'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
+      ],
       title:'Airpods Pro',
       price:'$249.00',
       slug:'airpods-pro-1',

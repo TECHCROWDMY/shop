@@ -106,6 +106,18 @@
 
 }
 
+.small-images-container{
+  @apply  flex gap-[5px]   border justify-center
+}
+
+.small-image{
+  @apply rounded-[8px] bg-[#ebebeb]  w-20  cursor-pointer 
+}
+
+.selected-image{
+  @apply bg-[#f02d34]
+}
+
 /* 
 :root {
   --max-width: 1100px;

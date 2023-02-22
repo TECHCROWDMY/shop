@@ -14,8 +14,8 @@ const ProductDetails = ({product}) => {
     <div className='product-details-section'>
         <div className='product-details-container border border-black'>
 
-            <div className='border border-black p-24'>
-                <div>
+            <div className='border border-black'>
+                <div className='img-container  md:p-14 p-6'>
                     <img 
                         src={product.imgUrl} 
                         className="object-cover mx-auto py-5"
@@ -25,8 +25,16 @@ const ProductDetails = ({product}) => {
                    
                 </div>
 
-                <div>
-                    
+
+                <div className="small-images-container">
+                    {product.smallImg?.map((item, i) => (
+                    <img 
+                        key={i}
+                        src={item}
+                        className={i === index ? 'small-image selected-image ' : 'small-image'}
+                        onMouseEnter={() => setIndex(i)}
+                    />
+                    ))}
                 </div>
 
 
