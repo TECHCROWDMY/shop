@@ -6,6 +6,58 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 
+.section{
+  @apply w-full py-32
+}
+
+.container{
+  @apply md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0
+}
+
+.hero-section{
+  @apply w-full md:h-[600px] h-[300px] flex items-center
+}
+
+.hero-container{
+  @apply h-full flex justify-center relative items-center  md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0
+}
+
+.hero-bg{
+  @apply w-full items-center object-cover
+}
+
+.hero-airpods{
+  @apply absolute top-0 w-full h-full flex  justify-center md:mt-[200px] mt-[50px] 
+}
+
+.products-section{
+  @apply w-full bg-[#F8F8F8] py-32
+}
+
+.products-container{
+  @apply md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0
+}
+
+.products-card{
+  @apply bg-white drop-shadow-md overflow-hidden rounded-lg mr-2 my-4 p-5
+}
+
+.product-details-section{
+  @apply w-full md:py-32
+}
+
+.product-details-container{
+  @apply md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0  grid md:grid-cols-2 grid-cols-1 
+}
+
+.btn{
+  @apply  text-black md:w-1/2 md:p-5 px-2 py-1 text-xl font-bold w-full border border-4 border-black
+}
+
+.add-to-cart{
+  @apply hover:bg-black  hover:text-white
+}
+
 
 .slick-next:before {
   content:url('../assets/nextButton.png'); 
@@ -18,7 +70,6 @@
 .slick-next {
   position: absolute;
   right:0;
-  /* margin-right: ; */
  }
 
  .slick-arrow{
@@ -26,9 +77,34 @@
   right:0;
  }
 
- .slick-dots {
+.slick-dots {
   @apply ml-[-10px] hidden
  }
+
+
+.quantity{
+  /* @apply  */
+}
+.quantity-desc{
+  /* @apply  */
+}
+.quantity-desc span{
+  font-size: 16px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.quantity-desc .minus{
+  border-right: 1px solid gray;
+  color: #f02d34;
+}
+.quantity-desc .num{
+  border-right: 1px solid gray;
+  font-size: 20px;
+}
+.quantity-desc .plus{
+  color: rgb(49, 168, 49);
+
+}
 
 /* 
 :root {

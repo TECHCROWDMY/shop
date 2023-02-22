@@ -4,31 +4,36 @@ import Slider from "react-slick";
  
 const Products = () => {
 
-  let courses=[
+  let products=[
     {
       imgUrl:'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
       title:'Airpods Pro',
       price:'$249.00',
+      slug:'airpods-pro-1',
     },
     {
       imgUrl:'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
       title:'Airpods Pro',
       price:'$249.00',
+      slug:'airpods-pro-2',
     },
     {
       imgUrl:'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
       title:'Airpods Pro',
       price:'$249.00',
+      slug:'airpods-pro-3',
     },
     {
       imgUrl:'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
       title:'Airpods Pro',
       price:'$249.00',
+      slug:'airpods-pro-4',
     },
     {
       imgUrl:'https://www.linkinforlife.com/wp-content/uploads/2022/06/airpods-pro-roundup.webp',
       title:'Airpods Pro',
       price:'$249.00',
+      slug:'airpods-pro-5',
     },
   ]
 
@@ -74,17 +79,19 @@ const Products = () => {
   };
 
   return (
-    <div className='w-full bg-[#F8F8F8] py-32'>
-        <div className='md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0'>
+    <div className='products-section'>
+        <div className='products-container'>
+            
             <div className='py-4'>
               <h1 className='py-3 text-3xl font-bold'>Best Selling</h1>
               <p className='text-[#6D737A]'>Enjoy Up To 50%</p>
             </div>
             
             <Slider {...settings} className="px-1">
-              {courses.map((course,i)=>
+              {products.map((product,i)=>
                 <div key={i}>
-                  <Card course={course} />
+                  <Card product={product} />
+                
                 </div> ) }
               
 
