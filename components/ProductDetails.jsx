@@ -4,7 +4,6 @@ import {AiOutlineMinus,AiOutlinePlus} from 'react-icons/ai'
 import { useStateContext } from '../context/StateContext';
 
 
-
 const ProductDetails = ({product}) => {
 
     const [index, setIndex] = useState(0);
