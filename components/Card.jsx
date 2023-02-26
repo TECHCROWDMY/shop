@@ -7,7 +7,7 @@ const Card = ({product}) => {
       <Link href={`/product/${product.slug}`}>
           <div className='products-card'>
             <img 
-              src={product.imgUrl} 
+              src={product.images[0]} 
               className="object-cover mx-auto py-5"
               width={350}
             
