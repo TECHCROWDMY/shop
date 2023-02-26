@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,9 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+*{
+  @apply font-urbanist
+}
 
 .section{
   @apply w-full py-32
@@ -31,7 +36,7 @@
 }
 
 .products-section{
-  @apply w-full bg-[#F8F8F8] py-32
+  @apply w-full bg-[#F8F8F8] py-12
 }
 
 .products-container{
@@ -47,7 +52,7 @@
 }
 
 .product-details-container{
-  @apply md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0  grid md:grid-cols-2 grid-cols-1 
+  @apply gap-8 md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0  grid md:grid-cols-2 grid-cols-1 
 }
 
 .btn{
@@ -107,16 +112,48 @@
 }
 
 .small-images-container{
-  @apply  flex gap-[5px]   border justify-center
+  @apply  flex gap-[5px] justify-center
 }
 
 .small-image{
-  @apply rounded-[8px] bg-[#ebebeb]  w-20  cursor-pointer 
+  @apply rounded-[8px]  md:w-28 w-20  cursor-pointer object-contain max-w-[100px] border border-gray-200 border-2
 }
 
 .selected-image{
-  @apply bg-[#f02d34]
+  @apply border border-black border-2
 }
+
+
+.cart-icon{
+  @apply text-[25px] text-gray-500 cursor-pointer relative bg-transparent
+  /* transition: transform .4s ease; */
+}
+
+.cart-item-qty{
+  @apply absolute right-[-5px] top-0 text-[12px] text-[#eee] bg-[#f02d34] w-[18px]  h-[18px] rounded-3xl text-center font-bold
+}
+
+
+.cart-wrapper{
+  @apply w-[100vw] bg-black bg-opacity-50  fixed right-0 top-0 z-10
+}
+
+.cart-container{
+  @apply h-[100vh]  w-[600px] bg-white  float-right px-[40px] py-[10px] relative
+}
+
+.product-container{
+  @apply mt-[15px] overflow-auto max-h-[70vh] px-[20px] py-[10px]
+}
+
+.product{ 
+  @apply flex gap-[30px] p-[20px]
+}
+
+.product .cart-product-image{
+  @apply  w-[180px] h-[150px] rounded-[15px] bg-[#ebebeb]
+}
+
 
 /* 
 :root {

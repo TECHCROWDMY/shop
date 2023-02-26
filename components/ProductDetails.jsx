@@ -12,13 +12,13 @@ const ProductDetails = ({product}) => {
 
   return (
     <div className='product-details-section'>
-        <div className='product-details-container border border-black'>
+        <div className='product-details-container'>
 
-            <div className='border border-black'>
-                <div className='img-container  md:p-14 p-6'>
+            <div className=''>
+                <div className='img-container h-[350px] flex items-center mb-[25px]'>
                     <img 
-                        src={product.imgUrl} 
-                        className="object-cover mx-auto py-5"
+                        src={product.images[0] && product.images[index]} 
+                        className=" mx-auto "
                         width={350}
                  
                     />
@@ -27,12 +27,12 @@ const ProductDetails = ({product}) => {
 
 
                 <div className="small-images-container">
-                    {product.smallImg?.map((item, i) => (
+                    {product.images?.map((item, i) => (
                     <img 
                         key={i}
                         src={item}
                         className={i === index ? 'small-image selected-image ' : 'small-image'}
-                        onMouseEnter={() => setIndex(i)}
+                        onClick={() => setIndex(i)}
                     />
                     ))}
                 </div>
@@ -59,7 +59,7 @@ const ProductDetails = ({product}) => {
                     </p>
                 </div>
                 
-                <button className='btn add-to-cart'>Add To Cart</button>
+                <button className='btn add-to-cart'  onClick={() => onAdd(product, qty)}>Add To Cart</button>
 
  
             </div>
