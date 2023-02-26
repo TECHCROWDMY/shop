@@ -1,4 +1,4 @@
-import { useStateContext } from '../context/StateContext';
+import { useStateContext } from '../context/stateContext';
 import React from 'react';
 import {AiOutlineShopping} from 'react-icons/ai'
 import Cart from './Cart';

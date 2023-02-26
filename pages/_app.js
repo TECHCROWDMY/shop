@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { StateContext } from '../context/StateContext';
+import { StateContext } from '../context/stateContext';
  
  
 

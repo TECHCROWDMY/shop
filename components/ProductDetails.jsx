@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Image from 'next/image';
 import {AiOutlineMinus,AiOutlinePlus} from 'react-icons/ai'
-import { useStateContext } from '../context/StateContext';
+import { useStateContext } from '../context/stateContext';
 
 
 const ProductDetails = ({product}) => {
