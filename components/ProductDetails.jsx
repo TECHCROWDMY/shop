@@ -16,12 +16,16 @@ const ProductDetails = ({product}) => {
 
             <div className=''>
                 <div className='img-container h-[350px] flex items-center mb-[25px]'>
+                {product.images?
                     <img 
-                        src={product.images[0] && product.images[index]} 
-                        className=" mx-auto "
-                        width={350}
-                 
-                    />
+                    src={product.images[0] && product.images[index]} 
+                    className=" mx-auto "
+                    width={350}
+         
+            />
+                
+                :''}
+                    
                    
                 </div>
 
