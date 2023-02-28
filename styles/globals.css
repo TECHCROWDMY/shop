@@ -139,7 +139,21 @@
 }
 
 .cart-container{
-  @apply h-[100vh]  w-[600px] bg-white  float-right px-[40px] py-[10px] relative
+  @apply border border-black h-[100vh]  w-[600px] bg-white  float-right px-[40px] py-[50px] relative
+}
+
+
+.cart-heading{
+  @apply  flex items-center text-[18px] font-[500] cursor-pointer gap-[2px] ml-[10px] border-none bg-[transparent]
+}
+
+.cart-heading .heading{
+  margin-left: 10px;
+}
+
+.cart-num-items{
+  margin-left: 10px;
+  color: #f02d34;
 }
 
 .product-container{

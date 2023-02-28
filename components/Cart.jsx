@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutLineShopping, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline} from 'react-icons/ti';
- import { useStateContext } from '../context/stateContext';
+import { useStateContext } from '../context/stateContext';
  
 const Cart = () => {
   const cartRef = useRef();
@@ -19,8 +19,8 @@ const Cart = () => {
         <button
           type='button'
           className='cart-heading'
-          onClick={()=>setShowCart(false)}
-        >
+          onClick={()=>setShowCart(false)} >
+
           <AiOutlineLeft />
           <span className='heading'>Your cart</span>
           <span className='cart-num-items'>({totalQuantities} items)</span>
@@ -32,9 +32,9 @@ const Cart = () => {
             <h3>Your shopping bag is empty</h3>
             <Link href="/">
               <button
-              type='button'
-              onClick={()=> setShowCart(false)}
-              className="btn">
+                type='button'
+                onClick={()=> setShowCart(false)}
+                className="btn">
                 Continue Shopping
               </button>
             </Link>

@@ -1,8 +1,8 @@
-import React from 'react'
-import Card from './Card'
-import Slider from "react-slick";
- 
-const Products = () => {
+import { Navbar, ProductDetails } from '@/components';
+import React from 'react';
+import { useRouter } from 'next/router';
+
+const ProductPage  = () => {
 
   let products=[
     {
@@ -64,69 +64,18 @@ const Products = () => {
 ]
 
 
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: false,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: false,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: false,
-        dots: true
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-  };
+  const {slug}  = useRouter().query
+ 
+   let product = products.filter(product=> product.slug == slug)
+   console.log(product)
+
 
   return (
-    <div className='products-section'>
-        <div className='products-container'>
-            
-            <div className='py-4'>
-              <h1 className='py-3 text-3xl font-bold'>Best Selling</h1>
-              <p className='text-[#6D737A]'>Enjoy Up To 50%</p>
-            </div>
-            
-            <Slider {...settings} className="px-1">
-              {products.map((product,i)=>
-                <div key={i}>
-                  <Card product={product} products={products} />
-                
-                </div> ) }
-              
-
-            </Slider>
-            
-        </div>
-
+    <div>
+        <Navbar />
+        <ProductDetails product={product[0]}/>
     </div>
   )
 }
 
-export default Products
+export default ProductPage

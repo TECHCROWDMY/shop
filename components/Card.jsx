@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
   
-const Card = ({product}) => {
+const Card = ({product,products}) => {
   return (
     <div>
       <Link href={`/product/${product.slug}`}>
