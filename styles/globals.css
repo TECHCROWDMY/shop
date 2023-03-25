@@ -75,6 +75,7 @@
 .slick-next {
   position: absolute;
   right:0;
+  content:url('../public/images/nextButton.png'); 
  }
 
  .slick-arrow{
