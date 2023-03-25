@@ -10,11 +10,9 @@ const Navbar = () => {
     <div className='w-full h-[80px] border-b bg-white '>
         <div className='container w-full h-full flex justify-between items-center'>
             
-            {/* <img src={logo} className="h-[18px] opacity-[65%]" /> */}
             <h1 className='font-urbanist font-black text-2xl'>Shop</h1>
             
-            <button type='button' className='cart-icon' 
-            onClick={()=>setShowCart(true)}><AiOutlineShopping />
+            <button type='button' className='cart-icon'onClick={()=>setShowCart(true)}><AiOutlineShopping />
               <span className='cart-item-qty'>{totalQuantities}</span>
             </button>
 

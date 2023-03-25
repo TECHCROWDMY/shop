@@ -2,13 +2,24 @@ import React,{useState} from 'react';
 import Image from 'next/image';
 import {AiOutlineMinus,AiOutlinePlus} from 'react-icons/ai'
 import { useStateContext } from '../context/stateContext';
-
-
-
-const ProductDetails = ({product}) => {
+import { useRouter } from 'next/router'
+import { useEffect } from 'react';
+ 
+const ProductDetails = () => {
 
     const [index, setIndex] = useState(0);
     const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+    const router = useRouter()
+    const [dataIndex, setDataIndex] = useState(0)
+
+
+    useEffect(() => {
+        if (!router.isReady) return
+        const { slug } = router.query
+        setDataIndex(products.findIndex(e => e.slug == slug))
+       }, [router.isReady, router.query])
+
+      
 
   return (
     <div className='product-details-section'>
@@ -16,27 +27,28 @@ const ProductDetails = ({product}) => {
 
             <div className=''>
                 <div className='img-container h-[350px] flex items-center mb-[25px]'>
-                {product.images?
-                    <img 
-                    src={product.images[0] && product.images[index]} 
-                    className=" mx-auto "
-                    width={350}
-         
-            />
-                
-                :''}
-                    
-                   
+                     
+                    <Image 
+                        src={products[dataIndex].images[index]} 
+                        className=" mx-auto "
+                        width={350}
+                        height={100}
+                        alt="product image" 
+                    />
                 </div>
 
 
                 <div className="small-images-container">
-                    {product.images?.map((item, i) => (
-                    <img 
+                    {products[dataIndex].images?.map((item, i) => (
+                     
+                    <Image
                         key={i}
                         src={item}
+                        width={350}
+                        height={100} 
                         className={i === index ? 'small-image selected-image ' : 'small-image'}
                         onClick={() => setIndex(i)}
+                        alt='sample images'
                     />
                     ))}
                 </div>
@@ -49,8 +61,8 @@ const ProductDetails = ({product}) => {
             <div className='flex flex-col gap-8'>
                 
                 <div  className='flex flex-col gap-4'>
-                    <div className='text-3xl font-bold'>{product.title}</div>
-                    <div className='text-xl font-medium'>{product.price}</div>
+                    <div className='text-3xl font-bold'>{products[dataIndex].title}</div>
+                    <div className='text-xl font-medium'>{products[dataIndex].price}</div>
                 </div>
 
 
@@ -63,7 +75,7 @@ const ProductDetails = ({product}) => {
                     </p>
                 </div>
                 
-                <button className='btn add-to-cart'  onClick={() => onAdd(product, qty)}>Add To Cart</button>
+                <button className='btn add-to-cart'  onClick={() => onAdd(products[dataIndex], qty)}>Add To Cart</button>
 
  
             </div>
@@ -75,3 +87,62 @@ const ProductDetails = ({product}) => {
 }
 
 export default ProductDetails
+
+ let products=[
+    {
+       images:[
+        '/images/cardAirpods.png',
+        '/images/cardAirpods2.jpeg',
+        '/images/cardAirpods3.png',
+        '/images/cardAirpods4.png',
+      ],
+      title:'Airpods Pro',
+      price:'$249.00',
+      slug:'airpods-pro-1',
+    },
+    {
+      images:[
+       '/images/cardAirpods.png',
+       '/images/cardAirpods2.jpeg',
+       '/images/cardAirpods3.png',
+       '/images/cardAirpods4.png',
+     ],
+     title:'Airpods Pro',
+     price:'$249.00',
+     slug:'airpods-pro-2',
+   },
+   {
+    images:[
+     '/images/cardAirpods.png',
+     '/images/cardAirpods2.jpeg',
+     '/images/cardAirpods3.png',
+     '/images/cardAirpods4.png',
+   ],
+   title:'Airpods Pro',
+   price:'$249.00',
+   slug:'airpods-pro-3',
+ },
+ {
+  images:[
+   '/images/cardAirpods.png',
+   '/images/cardAirpods2.jpeg',
+   '/images/cardAirpods3.png',
+   '/images/cardAirpods4.png',
+ ],
+ title:'Airpods Pro',
+ price:'$249.00',
+ slug:'airpods-pro-4',
+},
+{
+    images:[
+    '/images/cardAirpods.png',
+    '/images/cardAirpods2.jpeg',
+    '/images/cardAirpods3.png',
+    '/images/cardAirpods4.png',
+  ],
+  title:'Airpods Pro',
+  price:'$249.00',
+  slug:'airpods-pro-5',
+  },
+    
+]
