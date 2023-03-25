@@ -6,7 +6,7 @@
 
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
-
+ 
 *{
   @apply font-urbanist
 }
@@ -65,17 +65,19 @@
 
 
 .slick-next:before {
-  content:url('../public/images/nextButton.png'); 
+  content:url('../assets/nextButton.png'); 
+  background-image:url('/public/images/nextButton.png'); 
   position: absolute;
   right:0;
    margin-top: -35px;
    margin-right: -15px;
+   z-index: 9;
   }
 
 .slick-next {
   position: absolute;
   right:0;
-  content:url('../public/images/nextButton.png'); 
+ 
  }
 
  .slick-arrow{
@@ -86,7 +88,6 @@
 .slick-dots {
   @apply ml-[-10px] hidden
  }
-
 
 .quantity{
   /* @apply  */
