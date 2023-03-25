@@ -65,7 +65,7 @@
 
 
 .slick-next:before {
-  content:url('../assets/nextButton.png'); 
+  content:url('../public/images/nextButton.png'); 
   position: absolute;
   right:0;
    margin-top: -35px;
