@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ['www.linkinforlife.com'],
-  },
+  disableStaticImages : true,
 }
 
 module.exports = nextConfig
