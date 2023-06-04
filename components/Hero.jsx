@@ -14,6 +14,7 @@ const Hero = () => {
                         height="100"
                         width="1400"
                         className='mb-40'
+                        alt={heroBanner}
                 />
               </div>
 
@@ -27,6 +28,7 @@ const Hero = () => {
                           src={heroAirpods}
                           height="100"
                           width="700"
+                          alt={heroAirpods}
                     />
                   </motion.div>
               </div>
