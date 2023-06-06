@@ -49,7 +49,7 @@
 }
 
 .product-details-section{
-  @apply w-full md:py-32;
+  @apply w-full md:py-16;
 }
 
 .product-details-container{

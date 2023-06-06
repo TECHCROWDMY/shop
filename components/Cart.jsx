@@ -4,6 +4,7 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutLineShopping, AiOutl
 import { TiDeleteOutline} from 'react-icons/ti';
 import { useStateContext } from '../context/stateContext';
 import Image from 'next/image'
+import { urlFor, client } from '@/lib/client';
 
 const Cart = () => {
   const cartRef = useRef();
@@ -43,36 +44,37 @@ const Cart = () => {
         )}
         
         <div className='product-container'>
-          {cartItems.length >= 1 && cartItems.map((item,index)=>(
-            <div className='product'  key={item._id} >
+          {cartItems.length >= 1 && cartItems.map((product,index)=>(
+            <div className='product'  key={product._id} >
                <Image 
-                  src={item?.images[0]}
+                  loader={() => urlFor(product.image && product.image[0]).url()} 
+                  src={urlFor(product.image && product.image[0]).url()} 
                   height="100"
                   width="1400"
                   className="cart-product-image"
-                  alt={item?.images[0]}
+                  alt={product?.image[0]}
                 />
               <div className='item-desc'>
                 <div className='flex top'>
-                  <h5>{item.title}</h5>
-                  <h4>{item.price}</h4>
+                  <h5>{product.name}</h5>
+                  <h4>{product.price}</h4>
                 </div>
                 <div className='flex bottom'>
                        <div className='quantity-desc items-center'>
                             <span  
                             className='minus'
-                            onClick={() => toggleCartItemQuantity(item._id, 'dec') }>
+                            onClick={() => toggleCartItemQuantity(product._id, 'dec') }>
                                 <AiOutlineMinus />
                             </span>
                             <span className='num'>
-                                {item.quantity}
+                                {product.quantity}
                             </span>
                             <span className='plus'
-                            onClick={() => toggleCartItemQuantity(item._id, 'inc') }>
+                            onClick={() => toggleCartItemQuantity(product._id, 'inc') }>
                                 <AiOutlinePlus />
                             </span>
                       </div> 
-                      <button type='button' className='remove-item' onClick={() => onRemove(item)}><TiDeleteOutline /></button>
+                      <button type='button' className='remove-item' onClick={() => onRemove(product)}><TiDeleteOutline /></button>
 
                 </div>
               </div>
@@ -80,7 +82,7 @@ const Cart = () => {
           ))}
 
         </div>
-        {cartItems.length<=1 &&(
+        {cartItems.length>0 &&(
           <div className='cart-bottom'>
             <div className='total'>
               <h3>Subtotal:</h3>
