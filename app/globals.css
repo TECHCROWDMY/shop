@@ -1,27 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+ 
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+*{
+  @apply font-urbanist
+}
+
+.container{
+  @apply md:max-w-[1024px] max-w-[600px] px-4 md:px-0 m-auto
+}
+.logo{
+  @apply font-urbanist font-black text-2xl
+}
+.cart-icon{
+  @apply relative text-[25px]
+}
+.cart-item-qty{
+  @apply absolute text-[12px] top-0 right-[-5px] bg-red-500 w-[18px] h-[18px] rounded-3xl text-center text-white font-urbanist  font-black
+}
+.hero-section{
+  @apply w-full md:h-[450px] h-[200px] flex items-center
+}
+.hero-contianer{
+  @apply h-full md:max-w-[1024px] max-w-[600px] m-auto flex justify-center items-center relative px-4 md:px-0
+}
+.hero-airpods{
+  @apply absolute md:mt-[300px] mt-[150px]
 }
