@@ -1,18 +1,23 @@
-import Image from 'next/image';
-import { groq } from 'next-sanity';
-import { client } from '@/sanity/lib/client';
-import { Hero, Navbar, Products } from './components'
+'use client'
 
-export default async function Home() {
+import { Dispatch, createContext, useState, SetStateAction } from 'react';
+import { Hero, Navbar, Products } from './components';
+// import { StateContext } from './context/stateContext';
 
-  const products = await client.fetch(groq `*[_type=="product"]`)
-  console.log(products)
+export const AppContext = createContext({
+  showCart: true,
+  setShowCart: (show: boolean) => {}, // Provide a default function
+});
+
+export default function Home() {
+  const [showCart, setShowCart] = useState(false);
+  console.log(showCart);
 
   return (
-    <>
-      <Navbar/>
+    <AppContext.Provider value={{ showCart, setShowCart }}>
+      <Navbar />
       <Hero />
-      <Products/>
-     </>
+      <Products />
+    </AppContext.Provider>
   )
 }
