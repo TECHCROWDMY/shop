@@ -12,6 +12,30 @@ const Cart = () => {
   const handleClose = () =>{
     setShowCart(!showCart);
   }
+
+  const handleCheckout = async () => {
+    try {
+        const response = await fetch('http://localhost:3000/api/checkout',{
+          method:'POST',
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify({products:cartItems}),
+        });
+        const data = await response.json();
+        if(data.url){
+          window.location.href = data.url
+        }
+    } catch (error) {
+      console.error("Error during checkout", error)
+    }
+
+
+
+
+  }
+
+
   return (
     <div className='cart-wrapper'>
         <div className='cart-container'>
@@ -67,7 +91,7 @@ const Cart = () => {
                         <h3>${totalPrice}</h3>
                       </div>
                       <div className='btn-container'>
-                        <button type='button' className='checkout-btn'>
+                        <button onClick={handleCheckout} type='button' className='checkout-btn'>
                           Pay with stripe
                         </button>
                       </div>
