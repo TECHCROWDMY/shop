@@ -3,13 +3,14 @@ const stripe = require('stripe')(process.env.NEXT_STRIPE_SECRET_KEY);
 
 export const POST = async (request:any) => {
 
-  const { products } = request.json();
+  const { products } = await request.json();
   let activeProducts = await stripe.products.list({active:true});
+  console.log(activeProducts)
 
   try {
        //  1. Find products from stripe that matches products from cart.
        for(const product of products){
-         const matchedProducts = activeProducts?.find((stripeProduct:any)=>
+         const matchedProducts = activeProducts?.data?.find((stripeProduct:any)=>
                stripeProduct.name.toLowerCase() === product.name.toLowerCase()
          )
    
@@ -35,7 +36,7 @@ export const POST = async (request:any) => {
     let stripeProducts =  []
 
     for(const product of products){
-      const stripeProduct = activeProducts?.find((stripeProduct:any)=>
+      const stripeProduct = activeProducts?.data?.find((stripeProduct:any)=>
         stripeProduct.name.toLowerCase() === product.name.toLowerCase()
       );
 
