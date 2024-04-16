@@ -7,9 +7,6 @@ export const POST = async (request:any) => {
   let activeProducts = await stripe.products.list({active:true});
   console.log(activeProducts)
 
-  return NextResponse.json({
-    data: "session.url"
-})
 
   try {
        //  1. Find products from stripe that matches products from cart.
@@ -33,6 +30,10 @@ export const POST = async (request:any) => {
   } catch (error) {
       console.log("Error in creating a new product", error);
       throw error;
+      return NextResponse.json({
+          data: "session.url"
+      })
+  
   }
  
     //  3. Once the new product has been added to stripe, do FETCH Products again with updated products from stripe
