@@ -30,7 +30,7 @@ export const POST = async (request:any) => {
   } catch (error) {
       console.log("Error in creating a new product", error);
       return NextResponse.json({
-          data: "session.url"
+          data: error
       })
         throw error;
 
