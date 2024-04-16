@@ -15,7 +15,7 @@ const Cart = () => {
 
   const handleCheckout = async () => {
     try {
-        const response = await fetch('https://shop-vcj8.vercel.app/api/checkout',{
+        const response = await fetch('/api/checkout',{
           method:'POST',
           headers:{
             "Content-Type":"application/json"
