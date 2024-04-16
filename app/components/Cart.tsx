@@ -30,9 +30,6 @@ const Cart = () => {
       console.error("Error during checkout", error)
     }
 
-
-
-
   }
 
 

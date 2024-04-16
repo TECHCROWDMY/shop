@@ -3,6 +3,10 @@ const stripe = require('stripe')(process.env.NEXT_STRIPE_SECRET_KEY);
 
 export const POST = async (request:any) => {
 
+  return NextResponse.json({
+      data: "Hello"
+  })
+
   const { products } = await request.json();
   let activeProducts = await stripe.products.list({active:true});
   console.log(activeProducts)
