@@ -64,3 +64,8 @@ export const POST = async (request:any) => {
         url: session.url
     })
 }
+
+export const GET = async () => {
+
+    return NextResponse.json('Hello, world!')
+}
