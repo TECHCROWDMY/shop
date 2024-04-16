@@ -7,6 +7,10 @@ export const POST = async (request:any) => {
   let activeProducts = await stripe.products.list({active:true});
   console.log(activeProducts)
 
+  return NextResponse.json({
+    data: "session.url"
+})
+
   try {
        //  1. Find products from stripe that matches products from cart.
        for(const product of products){
