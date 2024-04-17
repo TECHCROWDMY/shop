@@ -7,7 +7,6 @@ export const POST = async (request:any) => {
   let activeProducts = await stripe.products.list({active:true});
   console.log(activeProducts)
 
-
   try {
        //  1. Find products from stripe that matches products from cart.
        for(const product of products){
@@ -29,11 +28,7 @@ export const POST = async (request:any) => {
        }
   } catch (error) {
       console.log("Error in creating a new product", error);
-      return NextResponse.json({
-          data: error
-      })
-        throw error;
-
+      throw error;
   }
  
     //  3. Once the new product has been added to stripe, do FETCH Products again with updated products from stripe
@@ -61,12 +56,11 @@ export const POST = async (request:any) => {
      const session = await stripe.checkout.sessions.create({
         line_items:stripeProducts,
         mode: 'payment',
-        success_url: 'https://shop-six-ecru.vercel.app/success',
-        cancel_url: 'https://shop-six-ecru.vercel.app/',
+        success_url: `http://localhost:3000/success`,
+        cancel_url: `http://localhost:3000/`,
       });
       
     return NextResponse.json({
         url: session.url
     })
 }
-

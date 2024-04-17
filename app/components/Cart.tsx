@@ -15,7 +15,7 @@ const Cart = () => {
 
   const handleCheckout = async () => {
     try {
-        const response = await fetch('/api/checkout',{
+        const response = await fetch('http://localhost:3000/api/checkout',{
           method:'POST',
           headers:{
             "Content-Type":"application/json"
@@ -30,6 +30,9 @@ const Cart = () => {
       console.error("Error during checkout", error)
     }
 
+
+
+
   }
 
 
@@ -40,7 +43,6 @@ const Cart = () => {
                     <AiOutlineLeft/>
                     <span className='heading'>Your Cart</span>
                     <span className='cart-num-items'>{totalQuantity}</span>
-
                 </button>
                 <div className='product-container'>
                   {cartItems.map((product:any)=>(
