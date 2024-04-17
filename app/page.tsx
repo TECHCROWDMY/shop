@@ -2,11 +2,7 @@
 
 import { useState, createContext } from 'react';
 import { Hero, Navbar, Products } from './components';
-
-export const AppContext = createContext({
-  showCart: true,
-  setShowCart: (show: boolean) => {},
-});
+import { AppContext } from './context/AppContext';
 
 export default function Home() {
   const [showCart, setShowCart] = useState(false);
